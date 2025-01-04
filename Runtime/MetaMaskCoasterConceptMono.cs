@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class MetaMaskCoasterConceptMono : MonoBehaviour {
 
@@ -15,20 +16,24 @@ public class MetaMaskCoasterConceptMono : MonoBehaviour {
 
 
     [Header("Generate")]
-    public string m_result_publicAddressMaster;
-    public string m_result_publicAddressCoaster;
-    
     public string m_publicAddressPointedByMarqueLetter;
     public string m_publicAddressPointedBySignedMessage;
     public bool m_isCoasterIsReferencedByMarqueLetter;
     public bool m_isMessageSignedByCoaster;
 
- 
+
 
     [ContextMenu("Generate New Guid")]
-    public void GenerateNewGuid() { 
-    
+    public void GenerateNewGuid()
+    {
+
         m_guidToSign = System.Guid.NewGuid().ToString();
+    }
+    [ContextMenu("Generate Time id")]
+    public void GenerateTimeId()
+    {
+        //Display time to the tick as human formation
+        m_guidToSign = DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss_fffff");
     }
 
     [ContextMenu("Sign In Browser the coaster")]

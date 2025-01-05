@@ -14,7 +14,7 @@ public abstract class EthMaskMono_AbstractPrivateKey : MonoBehaviour, IEthMaskPr
 
     public void GetPublicAddress(out string publicAddress) { 
     
-        MetaMaskSignUtility.GetPublicAddressFromPrivateKey(GetPrivateKey(), out publicAddress);
+        EthMaskSignUtility.GetPublicAddressFromPrivateKey(GetPrivateKey(), out publicAddress);
     }
 }
 

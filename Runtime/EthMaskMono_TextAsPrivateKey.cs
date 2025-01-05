@@ -26,7 +26,7 @@ public class EthMaskMono_TextAsPrivateKey : EthMaskMono_AbstractPrivateKey
             m_useDeviceIdPrevious = m_useDeviceId;
 
             GetPrivateKey(out string privateKey);
-            MetaMaskSignUtility.GetPublicAddressFromPrivateKey(privateKey, out m_publicAddress);
+            EthMaskSignUtility.GetPublicAddressFromPrivateKey(privateKey, out m_publicAddress);
         }
         
 
@@ -56,7 +56,7 @@ public class EthMaskMono_TextAsPrivateKey : EthMaskMono_AbstractPrivateKey
         }
 
         byte [] bytes = System.Text.Encoding.UTF8.GetBytes(t);
-        MetaMaskSignUtility.GeneratePrivateKeyFromBytes(bytes, out string privateKey);
+        EthMaskSignUtility.GeneratePrivateKeyFromBytes(bytes, out string privateKey);
         return privateKey;
     }
 }

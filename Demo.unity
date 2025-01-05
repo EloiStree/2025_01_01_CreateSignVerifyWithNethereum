@@ -122,202 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &285252567
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 285252569}
-  - component: {fileID: 285252574}
-  - component: {fileID: 285252573}
-  - component: {fileID: 285252572}
-  - component: {fileID: 285252571}
-  m_Layer: 0
-  m_Name: Connection To Server Push IID
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &285252569
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285252567}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 763.122, y: 288.45337, z: 10.445811}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &285252571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285252567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97c2a01f6ea68734f94cf9fde50f1c70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_text: 
-  m_logReceivedText: []
-  m_maxLogSize: 10
-  m_binary: 
-  m_intIndex: 0
-  m_intValue: 0
-  m_utcDateMilliseconds: 0
-  m_receivedTime: 0
-  m_sendToReceivedLag: 0
---- !u!114 &285252572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285252567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1e477a24076d854384ea6eac8a253e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_connection: {fileID: 285252574}
-  m_onReceivedMessageUTF8:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 285252571}
-        m_TargetAssemblyTypeName: TDD_ReceivedFromConnectToRelayServerTunnelingRsaMono,
-          be.elab.metamaskauth
-        m_MethodName: PushText
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_onReceivedMessageBytes:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 285252571}
-        m_TargetAssemblyTypeName: TDD_ReceivedFromConnectToRelayServerTunnelingRsaMono,
-          be.elab.metamaskauth
-        m_MethodName: PushBytes
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_catchExceptions: 0
---- !u!114 &285252573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285252567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 699c90891ecd155438a2f4136f1c0adf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_source: {fileID: 285252574}
-  m_onConnected:
-    m_PersistentCalls:
-      m_Calls: []
-  m_onDisconnected:
-    m_PersistentCalls:
-      m_Calls: []
-  m_onHandshakeVerified:
-    m_PersistentCalls:
-      m_Calls: []
-  m_onIndexLockChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_onIndexLockChangedAndIsValide:
-    m_PersistentCalls:
-      m_Calls: []
-  m_publicKeyValidated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_indexLock: 0
-  m_publicKey: 
---- !u!114 &285252574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285252567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f58f2bffac0ace4c9c25e411acd829c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_serverUri: ws://193.150.14.47:4615/
-  m_signerReference: {fileID: 1012298585}
-  m_tunnel:
-    m_connection:
-      m_launchState: 0
-      m_killSwitch:
-        m_needToBeKilled: 0
-      m_serverUri: 
-      m_runningThreadErrorHappened: 
-      m_runningListenerErrorHappened: 
-    m_handshake:
-      m_signInMessage: 
-      m_guidToSigned: 
-      m_signedMessage: 
-      m_receivedValideHankShake: 
-      m_receivedIndexLockValidation: 
-      m_isConnectionValidated: 0
-      m_connectionEstablishedAndVerified: 0
-      m_receiveGivenIndexLock: 0
-      m_givenIndexLock: -2147483648
-      m_inNameOfPublicAddress: 
-      m_coasterPublicAddress: 
-    m_signatureSample: 
-    m_timeDebug:
-      m_lastReceivedMessageTextDate: 
-      m_lastReceivedMessageBinaryDate: 
-      m_lastPushMessageTextDate: 
-      m_lastPushMessageBinaryDate: 
-    m_byteCountDebug:
-      m_receivedBinaryBytesCount: 0
-      m_receivedTextBytesCount: 0
-      m_sentBinaryBytesCount: 0
-      m_sentTextBytesCount: 0
-    m_runningState:
-      isStillRunning: 0
-      isRunningHandleTask: 0
-      isRunningListener: 0
-      isWebsocketConnected: 0
-      m_websocketState: 0
-  m_autoStart: 1
-  m_autoReconnect: 1
-  m_reconnectDelay: 5
-  m_runningState:
-    isStillRunning: 0
-    isRunningHandleTask: 0
-    isRunningListener: 0
-    isWebsocketConnected: 0
-    m_websocketState: 0
-  m_previousInteger: 0
 --- !u!1 &988532706
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,274 +209,6 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1012298585 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2805944269783869587, guid: c45d7e4e71003074e9d0a6ab8ad20a57,
-    type: 3}
-  m_PrefabInstance: {fileID: 4690494792526820440}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09520274624090740b9cf5aea5d83a9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1081975593
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1081975597}
-  - component: {fileID: 1081975596}
-  - component: {fileID: 1081975595}
-  m_Layer: 0
-  m_Name: Private Key Holder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1081975595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1081975593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98e0e0dc9a6683b44956b241444d045f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_dontShow:
-    m_privateKey: c3f8892d177c91e007e70b17552b1678879f51615709730f170afc203dbfa071
---- !u!114 &1081975596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1081975593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5514645798d04d408960d9d13ac4e9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_privateKeyHolder: {fileID: 0}
---- !u!4 &1081975597
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1081975593}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 763.122, y: 288.45337, z: 10.445811}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1330611238
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1330611243}
-  - component: {fileID: 1330611242}
-  - component: {fileID: 1330611241}
-  - component: {fileID: 1330611240}
-  - component: {fileID: 1330611239}
-  m_Layer: 0
-  m_Name: Connection To Server Listen IID
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1330611239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1330611238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97c2a01f6ea68734f94cf9fde50f1c70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_text: 
-  m_logReceivedText: []
-  m_maxLogSize: 10
-  m_binary: 
-  m_intIndex: 0
-  m_intValue: 0
-  m_utcDateMilliseconds: 0
-  m_receivedTime: 0
-  m_sendToReceivedLag: 0
---- !u!114 &1330611240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1330611238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1e477a24076d854384ea6eac8a253e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_connection: {fileID: 1330611242}
-  m_onReceivedMessageUTF8:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1330611239}
-        m_TargetAssemblyTypeName: TDD_ReceivedFromConnectToRelayServerTunnelingRsaMono,
-          be.elab.metamaskauth
-        m_MethodName: PushText
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_onReceivedMessageBytes:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1330611239}
-        m_TargetAssemblyTypeName: TDD_ReceivedFromConnectToRelayServerTunnelingRsaMono,
-          be.elab.metamaskauth
-        m_MethodName: PushBytes
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_catchExceptions: 0
---- !u!114 &1330611241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1330611238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 699c90891ecd155438a2f4136f1c0adf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_source: {fileID: 1330611242}
-  m_onConnected:
-    m_PersistentCalls:
-      m_Calls: []
-  m_onDisconnected:
-    m_PersistentCalls:
-      m_Calls: []
-  m_onHandshakeVerified:
-    m_PersistentCalls:
-      m_Calls: []
-  m_onIndexLockChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_onIndexLockChangedAndIsValide:
-    m_PersistentCalls:
-      m_Calls: []
-  m_publicKeyValidated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_indexLock: 0
-  m_publicKey: 
---- !u!114 &1330611242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1330611238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f58f2bffac0ace4c9c25e411acd829c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_serverUri: ws://193.150.14.47:4615/
-  m_signerReference: {fileID: 1012298585}
-  m_tunnel:
-    m_connection:
-      m_launchState: 0
-      m_killSwitch:
-        m_needToBeKilled: 0
-      m_serverUri: 
-      m_runningThreadErrorHappened: 
-      m_runningListenerErrorHappened: 
-    m_handshake:
-      m_signInMessage: 
-      m_guidToSigned: 
-      m_signedMessage: 
-      m_receivedValideHankShake: 
-      m_receivedIndexLockValidation: 
-      m_isConnectionValidated: 0
-      m_connectionEstablishedAndVerified: 0
-      m_receiveGivenIndexLock: 0
-      m_givenIndexLock: -2147483648
-      m_inNameOfPublicAddress: 
-      m_coasterPublicAddress: 
-    m_signatureSample: 
-    m_timeDebug:
-      m_lastReceivedMessageTextDate: 
-      m_lastReceivedMessageBinaryDate: 
-      m_lastPushMessageTextDate: 
-      m_lastPushMessageBinaryDate: 
-    m_byteCountDebug:
-      m_receivedBinaryBytesCount: 0
-      m_receivedTextBytesCount: 0
-      m_sentBinaryBytesCount: 0
-      m_sentTextBytesCount: 0
-    m_runningState:
-      isStillRunning: 0
-      isRunningHandleTask: 0
-      isRunningListener: 0
-      isWebsocketConnected: 0
-      m_websocketState: 0
-  m_autoStart: 1
-  m_autoReconnect: 1
-  m_reconnectDelay: 5
-  m_runningState:
-    isStillRunning: 0
-    isRunningHandleTask: 0
-    isRunningListener: 0
-    isWebsocketConnected: 0
-    m_websocketState: 0
-  m_previousInteger: 0
---- !u!4 &1330611243
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1330611238}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 763.122, y: 288.45337, z: 10.445811}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -796,61 +332,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1618708977
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1618708979}
-  - component: {fileID: 1618708978}
-  m_Layer: 0
-  m_Name: Sign Message as coaster
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1618708978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1618708977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b223d153da2c38e49807952be8ba3aab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_publicAddressCoaster: 0x73e01Dcf82E50b41be3018F45200231933CAA744
-  m_coasterPrivateKey: {fileID: 1081975595}
-  m_guidToSign: 2025_01_04_03_20_17_13375
-  m_coasterMarqueLetter: 0x73e01Dcf82E50b41be3018F45200231933CAA744|0xFEEAcdE5d735B8b347D9BBF8fBd02FEd153b564A|0x1558f2c9477061382b87b11a7418a944bfa04351bde7099767460d5336949167682c99e4713c4beb1d150b8812b27f4a279ebe4dda7de2cf4405066767f615a91c
-  m_coasterReceiptAsCoaster: 2025_01_04_03_20_17_13375|0x73e01Dcf82E50b41be3018F45200231933CAA744|0x989d5d47f220b369b254197d6ba724f92c2d949851b3aa586efb99c5d47b860e059c4adee27b79f2b8168003e55a304a3ed2f847e3eeb2bef47d5b9e00e5c4a91b
-  m_signGuid: 2025_01_04_03_20_17_13375|0x73e01Dcf82E50b41be3018F45200231933CAA744|0x989d5d47f220b369b254197d6ba724f92c2d949851b3aa586efb99c5d47b860e059c4adee27b79f2b8168003e55a304a3ed2f847e3eeb2bef47d5b9e00e5c4a91b|0xFEEAcdE5d735B8b347D9BBF8fBd02FEd153b564A|0x1558f2c9477061382b87b11a7418a944bfa04351bde7099767460d5336949167682c99e4713c4beb1d150b8812b27f4a279ebe4dda7de2cf4405066767f615a91c
-  m_publicAddressPointedByMarqueLetter: 0xFEEAcdE5d735B8b347D9BBF8fBd02FEd153b564A
-  m_publicAddressPointedBySignedMessage: 0x73e01Dcf82E50b41be3018F45200231933CAA744
-  m_isCoasterIsReferencedByMarqueLetter: 1
-  m_isMessageSignedByCoaster: 1
---- !u!4 &1618708979
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1618708977}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 763.122, y: 288.45337, z: 10.445811}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &4690494792526820440
+--- !u!1001 &4939373444626341198
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -858,93 +340,57 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2602379656743623428, guid: c45d7e4e71003074e9d0a6ab8ad20a57,
+    - target: {fileID: 6271936584053500075, guid: 68db308e1a14e514da4c17d8f8dfe82d,
         type: 3}
       propertyPath: m_Name
-      value: Coaster Signer
+      value: Multiple Connection
       objectReference: {fileID: 0}
-    - target: {fileID: 2778873310786927707, guid: c45d7e4e71003074e9d0a6ab8ad20a57,
-        type: 3}
-      propertyPath: m_textToGeneratePrivateKey
-      value: 'Any intelligent fool can make things bigger, more complex. It takes
-        a touch of genius and a lot of courage to move in the opposite direction.
-
-        E.F.
-        Schumacher
-
-'
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805944269783869587, guid: c45d7e4e71003074e9d0a6ab8ad20a57,
-        type: 3}
-      propertyPath: m_masterToCoasterId
-      value: 0xDa3239C8ad5C321A1411F3acC2C1f9F8C9D34ECE>0x0AD2FFA0A42d43B10f848ED07604a1737c1c07Cb
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805944269783869587, guid: c45d7e4e71003074e9d0a6ab8ad20a57,
-        type: 3}
-      propertyPath: m_marqueLetterCliboardText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805944269783869587, guid: c45d7e4e71003074e9d0a6ab8ad20a57,
-        type: 3}
-      propertyPath: m_markLetter.m_masterAddress
-      value: 0xDa3239C8ad5C321A1411F3acC2C1f9F8C9D34ECE
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805944269783869587, guid: c45d7e4e71003074e9d0a6ab8ad20a57,
-        type: 3}
-      propertyPath: m_markLetter.m_coasterAddress
-      value: 0x0AD2FFA0A42d43B10f848ED07604a1737c1c07Cb
-      objectReference: {fileID: 0}
-    - target: {fileID: 2805944269783869587, guid: c45d7e4e71003074e9d0a6ab8ad20a57,
-        type: 3}
-      propertyPath: m_markLetter.m_signedMarqueLetter
-      value: 0x5fe19ff076bc71e8a0631ff2bd2c2bf7df9791ddcab9b47d55e738a36a66f42d1adca00c7d27b72e9c6bb8997f37bcd948eda91e436209a4f4824973f05a68a91b
-      objectReference: {fileID: 0}
-    - target: {fileID: 8998273165653258676, guid: c45d7e4e71003074e9d0a6ab8ad20a57,
+    - target: {fileID: 8615153975153854071, guid: 68db308e1a14e514da4c17d8f8dfe82d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 763.122
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8998273165653258676, guid: c45d7e4e71003074e9d0a6ab8ad20a57,
+    - target: {fileID: 8615153975153854071, guid: 68db308e1a14e514da4c17d8f8dfe82d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 288.45337
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8998273165653258676, guid: c45d7e4e71003074e9d0a6ab8ad20a57,
+    - target: {fileID: 8615153975153854071, guid: 68db308e1a14e514da4c17d8f8dfe82d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.445811
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8998273165653258676, guid: c45d7e4e71003074e9d0a6ab8ad20a57,
+    - target: {fileID: 8615153975153854071, guid: 68db308e1a14e514da4c17d8f8dfe82d,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8998273165653258676, guid: c45d7e4e71003074e9d0a6ab8ad20a57,
+    - target: {fileID: 8615153975153854071, guid: 68db308e1a14e514da4c17d8f8dfe82d,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8998273165653258676, guid: c45d7e4e71003074e9d0a6ab8ad20a57,
+    - target: {fileID: 8615153975153854071, guid: 68db308e1a14e514da4c17d8f8dfe82d,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8998273165653258676, guid: c45d7e4e71003074e9d0a6ab8ad20a57,
+    - target: {fileID: 8615153975153854071, guid: 68db308e1a14e514da4c17d8f8dfe82d,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8998273165653258676, guid: c45d7e4e71003074e9d0a6ab8ad20a57,
+    - target: {fileID: 8615153975153854071, guid: 68db308e1a14e514da4c17d8f8dfe82d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8998273165653258676, guid: c45d7e4e71003074e9d0a6ab8ad20a57,
+    - target: {fileID: 8615153975153854071, guid: 68db308e1a14e514da4c17d8f8dfe82d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8998273165653258676, guid: c45d7e4e71003074e9d0a6ab8ad20a57,
+    - target: {fileID: 8615153975153854071, guid: 68db308e1a14e514da4c17d8f8dfe82d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
@@ -953,84 +399,11 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c45d7e4e71003074e9d0a6ab8ad20a57, type: 3}
---- !u!1001 &5082233359847059417
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3899109068072576564, guid: e2eb5ba723a85af4a8c5bd4a6f18a9fa,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 763.122
-      objectReference: {fileID: 0}
-    - target: {fileID: 3899109068072576564, guid: e2eb5ba723a85af4a8c5bd4a6f18a9fa,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 288.45337
-      objectReference: {fileID: 0}
-    - target: {fileID: 3899109068072576564, guid: e2eb5ba723a85af4a8c5bd4a6f18a9fa,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 10.445811
-      objectReference: {fileID: 0}
-    - target: {fileID: 3899109068072576564, guid: e2eb5ba723a85af4a8c5bd4a6f18a9fa,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3899109068072576564, guid: e2eb5ba723a85af4a8c5bd4a6f18a9fa,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3899109068072576564, guid: e2eb5ba723a85af4a8c5bd4a6f18a9fa,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3899109068072576564, guid: e2eb5ba723a85af4a8c5bd4a6f18a9fa,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3899109068072576564, guid: e2eb5ba723a85af4a8c5bd4a6f18a9fa,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3899109068072576564, guid: e2eb5ba723a85af4a8c5bd4a6f18a9fa,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3899109068072576564, guid: e2eb5ba723a85af4a8c5bd4a6f18a9fa,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9058078454391640021, guid: e2eb5ba723a85af4a8c5bd4a6f18a9fa,
-        type: 3}
-      propertyPath: m_Name
-      value: Concept of Coaster
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e2eb5ba723a85af4a8c5bd4a6f18a9fa, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 68db308e1a14e514da4c17d8f8dfe82d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 988532709}
   - {fileID: 1424003169}
-  - {fileID: 1081975597}
-  - {fileID: 1618708979}
-  - {fileID: 5082233359847059417}
-  - {fileID: 4690494792526820440}
-  - {fileID: 285252569}
-  - {fileID: 1330611243}
+  - {fileID: 4939373444626341198}

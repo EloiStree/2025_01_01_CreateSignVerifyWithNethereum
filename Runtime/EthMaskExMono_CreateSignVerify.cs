@@ -17,9 +17,9 @@ public class EthMaskExMono_CreateSignVerify : MonoBehaviour
     void Test()
     {
 
-        m_privateKeyGenerated = MetaMaskSignUtility.GeneratePrivateKey();
-        MetaMaskSignUtility.GetPublicAddressFromPrivateKey(m_privateKeyGenerated, out m_publicAddressGenerated);
-        MetaMaskSignUtility.GenerateClipboardSignMessage(m_privateKeyGenerated, m_messageToSign, out m_signatureAsClipboardMessage);
-        MetaMaskSignUtility.IsVerifiedClipboardSignMessage(m_signatureAsClipboardMessage, out m_isVerified, out m_claimedAddress, out m_recoveredAddress);
+        m_privateKeyGenerated = EthMaskSignUtility.GeneratePrivateKey();
+        EthMaskSignUtility.GetPublicAddressFromPrivateKey(m_privateKeyGenerated, out m_publicAddressGenerated);
+        EthMaskSignUtility.GenerateClipboardSignMessage(m_privateKeyGenerated, m_messageToSign, out m_signatureAsClipboardMessage);
+        EthMaskSignUtility.IsVerifiedClipboardSignMessage(m_signatureAsClipboardMessage, out m_isVerified, out m_claimedAddress, out m_recoveredAddress);
     }
 }

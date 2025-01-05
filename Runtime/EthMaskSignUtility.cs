@@ -72,7 +72,7 @@ public class MetaMaskSignCoasterUtility {
         if (string.IsNullOrEmpty(coasterAddress)) return;
         if (string.IsNullOrEmpty(masterAddress)) return;
         if (string.IsNullOrEmpty(signedMarqueLetter)) return;
-        isMaqueLetterValide = MetaMaskSignUtility.VerifySignedMessage(masterAddress, signedMarqueLetter, coasterAddress, out _);
+        isMaqueLetterValide = EthMaskSignUtility.VerifySignedMessage(masterAddress, signedMarqueLetter, coasterAddress, out _);
     }
 
 
@@ -95,10 +95,10 @@ public class MetaMaskSignCoasterUtility {
         }
 
         string privateCoasterKey = coasterKey.GetPrivateKey();
-        MetaMaskSignUtility.GetPublicAddressFromPrivateKey(privateCoasterKey, out string coasterPublicAddress);
+        EthMaskSignUtility.GetPublicAddressFromPrivateKey(privateCoasterKey, out string coasterPublicAddress);
         if (string.IsNullOrEmpty(coasterPublicAddress)) 
             return;
-        MetaMaskSignUtility.GetSignedMessage(privateCoasterKey, message, out string messageSignedbyCoaster);
+        EthMaskSignUtility.GetSignedMessage(privateCoasterKey, message, out string messageSignedbyCoaster);
 
         maqueLetterRef.GetMasterAddress(out string masterAddress);
         maqueLetterRef.GetSignedMarqueLetter(out string signedMarqueLetter);
@@ -113,12 +113,12 @@ public class MetaMaskSignCoasterUtility {
 
     public static void OpenPageToSignCoaster(IEthMaskPrivateKeyHolderGet keyHolder)
     {
-        MetaMaskSignUtility.GetPublicAddressFromPrivateKey(keyHolder,out string address);
-        MetaMaskSignUtility.OpenPageToSignMessage(address);
+        EthMaskSignUtility.GetPublicAddressFromPrivateKey(keyHolder,out string address);
+        EthMaskSignUtility.OpenPageToSignMessage(address);
     }
 }
 
-public class MetaMaskSignUtility
+public class EthMaskSignUtility
 {
 
     // Generate a clipboard message containing the original message, public address, and signed message

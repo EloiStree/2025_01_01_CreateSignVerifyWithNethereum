@@ -45,12 +45,12 @@ public class MetaMaskCoasterConceptMono : MonoBehaviour {
 
     [ContextMenu("Generate Signed Message")]
     public void GenerateCoasterSignedMessage() { 
-        MetaMaskSignUtility.GenerateClipboardSignMessage(m_coasterPrivateKey.GetPrivateKey(), m_guidToSign, out m_coasterReceiptAsCoaster);
-        MetaMaskSignUtility.SplitClipboardMessage(m_coasterReceiptAsCoaster,
+        EthMaskSignUtility.GenerateClipboardSignMessage(m_coasterPrivateKey.GetPrivateKey(), m_guidToSign, out m_coasterReceiptAsCoaster);
+        EthMaskSignUtility.SplitClipboardMessage(m_coasterReceiptAsCoaster,
             out string messageToSign,
             out string coasterAddress,
             out string signedMessage);
-        MetaMaskSignUtility.SplitClipboardMessage(m_coasterMarqueLetter,
+        EthMaskSignUtility.SplitClipboardMessage(m_coasterMarqueLetter,
             out string shouldBeCoasterAddress, 
             out string masterAddress, 
             out string signedMarqueLetter);
@@ -75,8 +75,8 @@ public class MetaMaskCoasterConceptMono : MonoBehaviour {
         string masterAddress = parts[3];
         string marqueLetter = parts[4];
 
-        MetaMaskSignUtility.GetPublicAddressInSignedMessage(messageToSign, signedMessage, out m_publicAddressPointedBySignedMessage);
-        MetaMaskSignUtility.GetPublicAddressInSignedMessage(coasterAddress, marqueLetter, out m_publicAddressPointedByMarqueLetter);
+        EthMaskSignUtility.GetPublicAddressInSignedMessage(messageToSign, signedMessage, out m_publicAddressPointedBySignedMessage);
+        EthMaskSignUtility.GetPublicAddressInSignedMessage(coasterAddress, marqueLetter, out m_publicAddressPointedByMarqueLetter);
 
         m_isCoasterIsReferencedByMarqueLetter = masterAddress == m_publicAddressPointedByMarqueLetter;
         m_isMessageSignedByCoaster = coasterAddress ==m_publicAddressPointedBySignedMessage  ;

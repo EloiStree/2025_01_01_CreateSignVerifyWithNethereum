@@ -27,7 +27,7 @@ public class EthMaskMono_CoasterPrivateKeySign : EthMaskMono_AbstractClipboardSi
     {
         if (m_markLetter.m_coasterAddress == "" || m_markLetter.m_masterAddress == "")
         {
-            MetaMaskSignUtility.GenerateClipboardSignMessage(
+            EthMaskSignUtility.GenerateClipboardSignMessage(
                 m_privateKeyHolder,
                 message,
                 out coasterSignedMessage);

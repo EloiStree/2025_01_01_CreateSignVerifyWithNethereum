@@ -11,6 +11,6 @@ public class EthMaskMono_PrivateKeySign: EthMaskMono_AbstractClipboardSigner
             return;
         }
         string privateKey = ((IEthMaskPrivateKeyHolderGet)m_privateKeyHolder).GetPrivateKey();
-        MetaMaskSignUtility.GenerateClipboardSignMessage(privateKey, message, out clipboardableSignedMessage);
+        EthMaskSignUtility.GenerateClipboardSignMessage(privateKey, message, out clipboardableSignedMessage);
     }
 }

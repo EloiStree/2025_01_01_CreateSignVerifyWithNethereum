@@ -14,13 +14,13 @@ public class EthMaskExMono_VerifyGivenClipboardMessage : MonoBehaviour
     [ContextMenu("Verify The Message")]
     void VerifyTheMessage()
     {
-        MetaMaskSignUtility.SplitClipboardMessage(m_messageToVerify, out m_messageGivenToSign, out m_claimedAddress, out m_signedMessage);
-        MetaMaskSignUtility.IsVerifiedClipboardSignMessage(m_messageToVerify, out m_isVerified, out m_claimedAddress, out m_recoveredAddress);
+        EthMaskSignUtility.SplitClipboardMessage(m_messageToVerify, out m_messageGivenToSign, out m_claimedAddress, out m_signedMessage);
+        EthMaskSignUtility.IsVerifiedClipboardSignMessage(m_messageToVerify, out m_isVerified, out m_claimedAddress, out m_recoveredAddress);
     }
 
     [ContextMenu("Get Message to Sign")]
     void GetMessageToSign()
     {
-        MetaMaskSignUtility.OpenPageToSignMessage(DateTime.Now.ToString());
+        EthMaskSignUtility.OpenPageToSignMessage(DateTime.Now.ToString());
     }
 }

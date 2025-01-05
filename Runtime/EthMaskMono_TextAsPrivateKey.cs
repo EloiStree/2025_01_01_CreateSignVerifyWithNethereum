@@ -10,8 +10,16 @@ public class EthMaskMono_TextAsPrivateKey : EthMaskMono_AbstractPrivateKey
     public bool m_useDeviceId;
     private bool m_useDeviceIdPrevious;
 
+    private string m_deviceId;
+    private void Awake()
+    {
+        
+        m_deviceId = SystemInfo.deviceUniqueIdentifier;
+    }
+
     private void OnValidate()
     {
+        m_deviceId = SystemInfo.deviceUniqueIdentifier;
         if (m_textToGeneratePrivateKeyPrevious != m_textToGeneratePrivateKey || m_useDeviceId != m_useDeviceIdPrevious)
         {
             m_textToGeneratePrivateKeyPrevious = m_textToGeneratePrivateKey;
@@ -44,7 +52,7 @@ public class EthMaskMono_TextAsPrivateKey : EthMaskMono_AbstractPrivateKey
 
         if (m_useDeviceId)
         {
-            t += SystemInfo.deviceUniqueIdentifier;
+            t += m_deviceId;
         }
 
         byte [] bytes = System.Text.Encoding.UTF8.GetBytes(t);

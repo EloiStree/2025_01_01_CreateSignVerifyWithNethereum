@@ -1,5 +1,11 @@
 ﻿using UnityEngine;
 
+public interface IEthMaskCliboardableSigner
+{
+    void GetClipboardSignedMessage(string message, out string clipboardableSignedMessage);
+}
+
+
 public class EthMaskMono_CreateSignVerify : MonoBehaviour, IEthMaskPrivateKeyHolderGet, IEthMaskCreateSignVerify
 { 
     public EthMaskMono_AbstractPrivateKey m_privateKeyHolder;

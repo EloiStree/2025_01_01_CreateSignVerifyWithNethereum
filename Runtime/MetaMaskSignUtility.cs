@@ -3,6 +3,49 @@ using System;
 using System.Security.Cryptography;
 
 
+
+public interface IEthMaskCoasterMaqueLetter { 
+
+    public void GetMasterAddress(out string masterAddress);
+    public void GetCoasterAddress(out string coasterAddress);
+    public void GetSignedMarqueLetter(out string signedMarqueLetter);
+}
+
+[System.Serializable]
+public struct STRUCT_EthMaskCoasterMaqueLetter : IEthMaskCoasterMaqueLetter
+{ 
+
+    /// <summary>
+    ///  What is the master flag address of the privateer
+    /// </summary>
+    public string m_masterAddress;
+    /// <summary>
+    /// What public address the privateer is using and signed in the past
+    /// <\summary>
+    public string m_coasterAddress;
+    /// <summary>
+    /// Message using privateer address signed in the past by the master private key
+    /// At least once in the past the master private key signed a message with the privateer address
+    /// Giving him the authority to sign message on his behalf
+    /// </summary>
+    public string m_signedMarqueLetter;
+
+    public void GetCoasterAddress(out string coasterAddress)
+    {
+        coasterAddress = m_coasterAddress;
+    }
+
+    public void GetMasterAddress(out string masterAddress)
+    {
+        masterAddress = m_masterAddress;
+    }
+
+    public void GetSignedMarqueLetter(out string signedMarqueLetter)
+    {
+        signedMarqueLetter = m_signedMarqueLetter;
+    }
+}
+
 public class MetaMaskSignCoasterUtility {
 
     public static void GenerateClipboardSignCoasterMessage(
@@ -15,10 +58,74 @@ public class MetaMaskSignCoasterUtility {
     {
         clipboardableSignature = string.Join("|", messageToSign.Trim(), publicAddressCoaster.Trim(), signedMessageCoaster.Trim(), publicAddressMaster.Trim(), signedMarqueLetter.Trim());
     }
+
+    public static void IsMaqueLetterValide(
+        IEthMaskCoasterMaqueLetter maqueLetterRef,
+        out bool isMaqueLetterValide)
+    {
+        isMaqueLetterValide = false;
+        if (maqueLetterRef == null)
+            return;
+        maqueLetterRef.GetCoasterAddress(out string coasterAddress);
+        maqueLetterRef.GetMasterAddress(out string masterAddress);
+        maqueLetterRef.GetSignedMarqueLetter(out string signedMarqueLetter);
+        if (string.IsNullOrEmpty(coasterAddress)) return;
+        if (string.IsNullOrEmpty(masterAddress)) return;
+        if (string.IsNullOrEmpty(signedMarqueLetter)) return;
+        isMaqueLetterValide = MetaMaskSignUtility.VerifySignedMessage(masterAddress, signedMarqueLetter, coasterAddress, out _);
+    }
+
+
+    public static void GenerateClipboardSignCoasterMessage(
+        IEthMaskPrivateKeyHolderGet coasterKey,
+        IEthMaskCoasterMaqueLetter maqueLetterRef,
+        in string message,
+        out string coasterSignedMessage)
+    {
+        coasterSignedMessage= "";
+
+        if (coasterKey == null || maqueLetterRef == null)
+        {
+            return;
+        }
+        IsMaqueLetterValide(maqueLetterRef, out bool isMaqueLetterValide);
+        if (!isMaqueLetterValide)
+        {
+            return;
+        }
+
+        string privateCoasterKey = coasterKey.GetPrivateKey();
+        MetaMaskSignUtility.GetPublicAddressFromPrivateKey(privateCoasterKey, out string coasterPublicAddress);
+        if (string.IsNullOrEmpty(coasterPublicAddress)) 
+            return;
+        MetaMaskSignUtility.GetSignedMessage(privateCoasterKey, message, out string messageSignedbyCoaster);
+
+        maqueLetterRef.GetMasterAddress(out string masterAddress);
+        maqueLetterRef.GetSignedMarqueLetter(out string signedMarqueLetter);
+        MetaMaskSignCoasterUtility.GenerateClipboardSignCoasterMessage(
+            message,
+            coasterPublicAddress,
+            messageSignedbyCoaster,
+            masterAddress,
+            signedMarqueLetter,
+            out coasterSignedMessage);
+    }
+
+    public static void OpenPageToSignCoaster(IEthMaskPrivateKeyHolderGet keyHolder)
+    {
+        MetaMaskSignUtility.GetPublicAddressFromPrivateKey(keyHolder,out string address);
+        MetaMaskSignUtility.OpenPageToSignMessage(address);
+    }
 }
 
 public class MetaMaskSignUtility
 {
+
+    // Generate a clipboard message containing the original message, public address, and signed message
+    public static void GenerateClipboardSignMessage(IEthMaskPrivateKeyHolderGet privateKey, string message, out string clipboardMessage)
+    {
+        GenerateClipboardSignMessage(privateKey.GetPrivateKey(), message, out clipboardMessage);
+    }
     // Generate a clipboard message containing the original message, public address, and signed message
     public static void GenerateClipboardSignMessage(string privateKey, string message, out string clipboardMessage)
     {
@@ -80,6 +187,10 @@ public class MetaMaskSignUtility
         privateKey = EthECKey.GenerateKey().GetPrivateKey();
     }
 
+    public static void GetPublicAddressFromPrivateKey(IEthMaskPrivateKeyHolderGet privateKey, out string publicAddress)
+    {
+         GetPublicAddressFromPrivateKey(privateKey.GetPrivateKey(), out publicAddress);
+    }
     // Get the public address associated with a given private key
     public static void GetPublicAddressFromPrivateKey(string privateKey, out string publicAddress)
     {
